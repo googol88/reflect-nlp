@@ -72,7 +72,7 @@ def train():
     print("df size before augmentation: %d" % len(X_train.index))
 
     ### Data Augmentation
-    aug_config = config['AUG']
+    """aug_config = config['AUG']
     delta = []
 
     # sentence variations
@@ -116,7 +116,7 @@ def train():
     appendDF = pd.DataFrame(delta, columns = ['intent', 'valid'])
     X_train = X_train.append(appendDF.intent)
     Y_train = np.append(Y_train, appendDF.valid)
-    print("df size after augmentation: %d" % len(X_train.index))
+    print("df size after augmentation: %d" % len(X_train.index))"""
 
     seqs = tokenizer.texts_to_sequences(X_train)
     padded_seqs = sequence.pad_sequences(
